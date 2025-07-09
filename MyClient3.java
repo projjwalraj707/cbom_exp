@@ -19,7 +19,7 @@ import org.bouncycastle.util.Strings;
 public class MyClient2 {
 	public static  void main(String[] args) throws Exception {
 		Properties props = System.getProperties();
-		props.setProperty("jdk.tls.namedGroups", "X25519MLKEM768");
+		props.setProperty("jdk.tls.namedGroups", "X25519");
 		String HOST_NAME = "www.instagram.com";
 		int PORT = 443;
 		Security.addProvider(new BouncyCastleJsseProvider());
