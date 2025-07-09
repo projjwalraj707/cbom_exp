@@ -23,7 +23,7 @@ public class MyClient2 {
 		String HOST_NAME = "www.instagram.com";
 		int PORT = 443;
 		Security.addProvider(new BouncyCastleJsseProvider());
-		SSLContext sslContext = SSLContext.getInstance("TLSv1.3", "default");
+		SSLContext sslContext = SSLContext.getInstance("TLSv1.3", "BCJSSE");
 		TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance("PKIX", "BCJSSE");
 		trustManagerFactory.init((KeyStore) null);
 		sslContext.init(null, trustManagerFactory.getTrustManagers(), new SecureRandom());
