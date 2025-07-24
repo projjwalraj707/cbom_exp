@@ -1,5 +1,6 @@
 from Crypto.PublicKey.RSA import generate;
 print(generate(1024));
+print(generate());
 
 from Crypto.PublicKey import RSA;
 keyGenerator = RSA.generate;
