@@ -7,5 +7,5 @@ from DataFlow::CallCfgNode call, DataFlow::ExprNode expr
 where
 	call = API::moduleImport("Crypto").getMember("PublicKey").getMember("RSA").getMember("generate").getACall() and
 	DataFlow::localFlow(expr, call.getArg(0)) and
-	expr.asExpr().(Num).getN() != ["512"]
-select call, expr, expr.asExpr().(Num).getN(), "Hi"
+	expr.asExpr().(Num).getN() = ["256"]
+select call, expr, expr.asExpr().(Num).getN()

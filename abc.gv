@@ -1,0 +1,34 @@
+digraph G {
+	"eb6acccf-dbab-49a9-a47d-a818f59f7469" [label=SCRYPT color="#ffd966" shape=box style=filled]
+	"e777e7cd-60fa-4411-ae62-226d7b719c68" [label=HKDF color="#ffd966" shape=box style=filled]
+	"0ac2c3d1-2b07-4f5f-99bb-04902f0b6f27" [label=HMAC color="#ffd966" shape=box style=filled]
+	"4eaecf4d-b3ec-4f56-bcde-f2491d451ea5" [label="HKDF-SHA256" color="#ffd966" shape=box style=filled]
+	"96b269d3-8ec4-4cc0-85e0-22f6033ebfbe" [label="HMAC-SHA256" color="#ffd966" shape=box style=filled]
+	"8712a01b-c9ba-460c-8901-b1e38ebe3485" [label=ConcatenationKDF color="#ffd966" shape=box style=filled]
+	"1e2be71d-95f5-41d6-94c1-83ca226f1774" [label=AES color="#ffd966" shape=box style=filled]
+	"e2892251-30c7-4eac-90b0-1aa4b4c723e1" [label=SHA256 color="#ffd966" shape=box style=filled]
+	"c2629543-b970-4ac7-ab1d-73bb6665e74a" [label=CMAC color="#ffd966" shape=box style=filled]
+	"924fe480-4978-4a7a-95a6-799eab11d21e" [label="ANSI X9.63" color="#ffd966" shape=box style=filled]
+	"ea85fff8-3e5c-4022-bc95-1ce152e580a7" [label="AES-CTR" color="#ffd966" shape=box style=filled]
+	"59647890-9d84-498f-898c-cd7202889588" [label="PBKDF2-SHA256" color="#ffd966" shape=box style=filled]
+	"96fff720-7d68-46b4-847b-29ae7903e011" [label="AES-CMAC" color="#ffd966" shape=box style=filled]
+	"e2892251-30c7-4eac-90b0-1aa4b4c723e1" -> "4eaecf4d-b3ec-4f56-bcde-f2491d451ea5" [label=u]
+	"e2892251-30c7-4eac-90b0-1aa4b4c723e1" -> "0ac2c3d1-2b07-4f5f-99bb-04902f0b6f27" [label=u]
+	"e2892251-30c7-4eac-90b0-1aa4b4c723e1" -> "924fe480-4978-4a7a-95a6-799eab11d21e" [label=u]
+	"ea85fff8-3e5c-4022-bc95-1ce152e580a7" -> "96fff720-7d68-46b4-847b-29ae7903e011" [label=u]
+	"1e2be71d-95f5-41d6-94c1-83ca226f1774" -> "96fff720-7d68-46b4-847b-29ae7903e011" [label=u]
+	"e2892251-30c7-4eac-90b0-1aa4b4c723e1" -> "59647890-9d84-498f-898c-cd7202889588" [label=u]
+	"e2892251-30c7-4eac-90b0-1aa4b4c723e1" -> "96b269d3-8ec4-4cc0-85e0-22f6033ebfbe" [label=u]
+	"1e2be71d-95f5-41d6-94c1-83ca226f1774" -> "c2629543-b970-4ac7-ab1d-73bb6665e74a" [label=u]
+	"e2892251-30c7-4eac-90b0-1aa4b4c723e1" -> "8712a01b-c9ba-460c-8901-b1e38ebe3485" [label=u]
+	"e2892251-30c7-4eac-90b0-1aa4b4c723e1" -> "e777e7cd-60fa-4411-ae62-226d7b719c68" [label=u]
+	color=yellow label="
+
+
+
+
+Yellow: Algorithms
+Grey: Protocols
+Green: Certificates
+Blue: Related Crypto Material"
+}

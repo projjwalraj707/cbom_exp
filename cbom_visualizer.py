@@ -1,8 +1,7 @@
 import graphviz, json
 dot = graphviz.Digraph('G', filename='abc.gv')
-#dot = graphviz.Digraph('G')
 
-cbomFileLoc = "./mastercard_cbom.json"
+cbomFileLoc = "./cbom-action_IBM.json"
 cbom = {}
 with open(cbomFileLoc) as f:
     cbom = json.load(f)
