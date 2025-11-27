@@ -42,7 +42,7 @@ public class MyClient {
 			}
 			public Vector getSupportedGroups(Vector paramVector) {
 				Vector v = new Vector();
-				v.addElement(Integers.valueOf(NamedGroup.X25519));
+				v.addElement(Integers.valueOf(NamedGroup.X25519MLKEM768));
 				return v;
 			}
 		};

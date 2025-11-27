@@ -1,6 +1,9 @@
 import java.security.Security;
 import java.security.SecureRandom;
 import java.security.KeyStore;
+
+import javax.net.ssl.KeyManagerFactory;
+import javax.net.ssl.KeyManagers;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
@@ -19,14 +22,22 @@ import org.bouncycastle.util.Strings;
 public class MyClient2 {
 	public static  void main(String[] args) throws Exception {
 		Properties props = System.getProperties();
-		props.setProperty("jdk.tls.namedGroups", "X25519");
+		props.setProperty("jdk.tls.namedGroups", "X25519MLKEM768");
 		String HOST_NAME = "www.instagram.com";
 		int PORT = 443;
 		Security.addProvider(new BouncyCastleJsseProvider());
-		SSLContext sslContext = SSLContext.getInstance("TLSv1.3", "BCJSSE");
+
 		TrustManagerFactory trustManagerFactory = TrustManagerFactory.getInstance("PKIX", "BCJSSE");
 		trustManagerFactory.init((KeyStore) null);
-		sslContext.init(null, trustManagerFactory.getTrustManagers(), new SecureRandom());
+
+		KeyStore ks = KeyStore.getInstance("WINDOWS-ROOT", "MSCAPI");
+		KeyManagerFactory kmf = KeyManagerFactory.getInstance();
+		kmf.init(ks, null);
+		KeyManagers keyManagers = kmf.getKeyManagers();
+
+		SSLContext sslContext = SSLContext.getInstance("TLSv1.3", "BCJSSE");
+		sslContext.init(keyManagers, trustManagerFactory.getTrustManagers(), new SecureRandom());
+		 
 		SSLSocketFactory socketFactory = sslContext.getSocketFactory();
 		SSLSocket cSock = (SSLSocket) socketFactory.createSocket(HOST_NAME, PORT);
 		cSock.startHandshake();

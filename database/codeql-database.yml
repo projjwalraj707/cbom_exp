@@ -1,0 +1,13 @@
+---
+sourceLocationPrefix: C:\Users\piyus\cbom_exp
+baselineLinesOfCode: 42
+unicodeNewlines: false
+columnKind: utf32
+primaryLanguage: python
+creationMetadata:
+  sha: 7a3c66e0f45baa044dfc6ceed08c1de9ae644b77
+  cliVersion: 2.22.2
+  creationTime: 2025-11-27T08:09:28.981749600Z
+overlayBaseDatabase: false
+overlayDatabase: false
+finalised: true
