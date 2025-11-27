@@ -8,13 +8,13 @@ print(RSA.generate(512));
 print(keyGenerator(512));
 
 import Crypto.PublicKey.RSA as Encryptor;
-print(Encryptor.generate(1024));
+print(Encryptor.generate(512));
 
 import Crypto.PublicKey.RSA;
 print(Crypto.PublicKey.RSA.generate(512));
 
 import Crypto.PublicKey.RSA;
-parameter = 512;
+parameter = 1024;
 print(Crypto.PublicKey.RSA.generate(parameter));
 
 """
