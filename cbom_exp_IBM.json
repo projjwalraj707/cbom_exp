@@ -1,0 +1,89 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:979b9ddd-b89b-4929-8c61-655e641f8e66",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-11-27T11:07:08Z",
+    "tools": {
+      "components": [],
+      "services": [
+        {
+          "provider": {
+            "name": "PQCA"
+          },
+          "name": "CBOMkit"
+        }
+      ]
+    },
+    "properties": [
+      {
+        "name": "gitUrl",
+        "value": "https://github.com/projjwalraj707/cbom_exp"
+      },
+      {
+        "name": "revision",
+        "value": "main"
+      },
+      {
+        "name": "commit",
+        "value": "68b0993"
+      }
+    ]
+  },
+  "components": [
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "852eaddb-8281-4657-ae81-b0aaa72a3b90",
+      "name": "TLSv1.3",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "MyClient3.java",
+            "line": 38,
+            "offset": 26,
+            "additionalContext": "javax.net.ssl.SSLContext#getInstance(Ljava/lang/String;Ljava/lang/String;)Ljavax/net/ssl/SSLContext;"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "protocol",
+        "protocolProperties": {
+          "type": "tls",
+          "version": "1.3"
+        }
+      }
+    },
+    {
+      "type": "cryptographic-asset",
+      "bom-ref": "b16e1b7f-c50b-478e-8c2b-736be1c4ccdc",
+      "name": "ML-KEM",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "MLKEM.java",
+            "line": 30,
+            "offset": 34,
+            "additionalContext": "org.bouncycastle.pqc.crypto.mlkem.MLKEMGenerator#<init>(Ljava/security/SecureRandom;)V"
+          },
+          {
+            "location": "MLKEM.java",
+            "line": 36,
+            "offset": 34,
+            "additionalContext": "org.bouncycastle.pqc.crypto.mlkem.MLKEMExtractor#<init>(Lorg/bouncycastle/pqc/crypto/mlkem/MLKEMPrivateKeyParameters;)V"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "kem",
+          "cryptoFunctions": [
+            "encapsulate"
+          ]
+        }
+      }
+    }
+  ],
+  "dependencies": []
+}
