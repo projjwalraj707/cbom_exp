@@ -1,7 +1,7 @@
 import graphviz, json
 dot = graphviz.Digraph('G', filename='abc.gv')
 
-cbomFileLoc = "./cbom-action_IBM.json"
+cbomFileLoc = "cbom-lens-default.json"
 cbom = {}
 with open(cbomFileLoc) as f:
     cbom = json.load(f)
@@ -13,7 +13,7 @@ for component in cbom["components"]:
     if component['cryptoProperties']['assetType'] == 'algorithm':
         dot.node(component['bom-ref'], component['name'].split('@')[0], style='filled', color='#ffd966', shape='box') # Algorithm is shown with yellow color
     elif component['cryptoProperties']['assetType'] == 'related-crypto-material':
-        dot.node(component['bom-ref'], component['name'].split('@')[0], color='blue', shape='box') # assets like keys are shown with blue color
+        dot.node(component['bom-ref'], component['name'].split('@')[0], style='filled', color='#B9B9FE', shape='box') # assets like keys are shown with blue color
     elif component['cryptoProperties']['assetType'] == 'protocol':
         dot.node(component['bom-ref'], component['name'].split('@')[0], style='filled', color='#c9c9c9', shape='box') # Protocol is shown with grey color
     elif component['cryptoProperties']['assetType'] == 'certificate':
@@ -29,5 +29,5 @@ for dependency in cbom['dependencies']:
         for fromID in dependency['provides']:
             dot.edge(fromID, toID, label='i')
 
-dot.attr(label='\n\n\n\n\nYellow: Algorithms\nGrey: Protocols\nGreen: Certificates\nBlue: Related Crypto Material', color='yellow')
+dot.attr(label='\n\n\n\n\nYellow: Algorithms\nGrey: Protocols\nGreen: Certificates\nBlue: Related Crypto Material(Prv. Keys, Pub. Keys, API Keys, Tokens etc)', color='yellow')
 dot.view()
