@@ -1,0 +1,15 @@
+version: 0
+
+service:
+  mode: manual
+  verbose: false
+  log: stderr
+  dir: .
+
+containers:
+  enabled: true
+  config:
+    - host: ${DOCKER_HOST}
+      images:
+        - docker.io/library/alpine:3.22.1
+

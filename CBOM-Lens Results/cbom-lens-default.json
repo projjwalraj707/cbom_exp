@@ -1,0 +1,361 @@
+{
+  "$schema": "https://cyclonedx.org/schema/bom-1.6.schema.json",
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.6",
+  "serialNumber": "urn:uuid:67e49c0c-a77c-49e0-9033-69aa7b53e350",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2025-12-18T09:01:01Z",
+    "lifecycles": [
+      {
+        "phase": "operations"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "manufacturer": {
+        "name": "CZERTAINLY",
+        "address": {},
+        "url": [
+          "https://www.czertainly.com"
+        ]
+      },
+      "name": "CBOM-Lens",
+      "version": "v0.0.0-20251217101819-200bf8fef833"
+    }
+  },
+  "components": [
+    {
+      "bom-ref": "crypto/algorithm/ml-dsa-65@sha256:11a5c81488230096ab83b06e274f6a2ad134d717e0d5add9451ed2817422beb2",
+      "type": "cryptographic-asset",
+      "name": "crypto/algorithm/ml-dsa-65",
+      "properties": null,
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/cdxtest/testdata/ml-dsa-65-cert.pem"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "65",
+          "executionEnvironment": "software-plain-ram",
+          "implementationPlatform": "x86_64",
+          "cryptoFunctions": [
+            "sign"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 3
+        },
+        "relatedCryptoMaterialProperties": {
+          "format": "PEM"
+        },
+        "oid": "2.16.840.1.101.3.4.3.18"
+      }
+    },
+    {
+      "bom-ref": "crypto/private-key/sha256:102fd9c195b978b65141d911573a489fb719b0900cb377e887fcb61d67dbf160",
+      "type": "cryptographic-asset",
+      "name": "private-key",
+      "description": "Identified a Private Key, which may compromise cryptographic security and sensitive data encryption.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/cdxtest/cdxtest_test.go"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "private-key"
+        }
+      }
+    },
+    {
+      "bom-ref": "crypto/key/sha256:b3f7ea6d0d332bb4b14622a20b09496785b7f19698d8fa0922a1df67d465d441",
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/cdxtest/cdxtest_test.go"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "bom-ref": "crypto/token/sha256:a833f87ec2d3eac383f36705e94cb9e080ef98a3c7f199f85ffd9290cf964716",
+      "type": "cryptographic-asset",
+      "name": "aws-access-token",
+      "description": "Identified a pattern that may indicate AWS credentials, risking unauthorized cloud resource access and data breaches on AWS platforms.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/leaks_test.go"
+          },
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/scanner/gitleaks/gitleaks_test.go"
+          },
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/testing/leaks/aws_token.py"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "bom-ref": "crypto/token/sha256:c794fa6d20c64efb9adf980ae93af472a1679775862d421ffe55d4a57fad5b3e",
+      "type": "cryptographic-asset",
+      "name": "jwt",
+      "description": "Uncovered a JSON Web Token, which may lead to unauthorized access to web applications and sensitive user data.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/leaks_test.go"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "token"
+        }
+      }
+    },
+    {
+      "bom-ref": "crypto/key/sha256:889a0fa66ae3782edb74b0964abf8f885b8811019165f0b2314af81733879f05",
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/go.sum"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "bom-ref": "crypto/key/sha256:9150f770c34e013ac0644a80a72a5a491d541924cc1d988265cf7794c15e14ce",
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/go.sum"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "bom-ref": "crypto/key/ml-dsa-65@",
+      "type": "cryptographic-asset",
+      "name": "ML-DSA-65",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/cdxtest/testdata/ml-dsa-65-cert.pem"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "algorithmRef": "crypto/algorithm/ml-dsa-65@sha256:94d41a608229d2de2c811b6664d65e1bbb187f40077b6d1277da818199d970c0",
+          "format": "PEM"
+        },
+        "oid": "2.16.840.1.101.3.4.3.18"
+      }
+    },
+    {
+      "bom-ref": "crypto/algorithm/ml-dsa-65@sha256:94d41a608229d2de2c811b6664d65e1bbb187f40077b6d1277da818199d970c0",
+      "type": "cryptographic-asset",
+      "name": "ML-DSA-65",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/cdxtest/testdata/ml-dsa-65-cert.pem"
+          },
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/cdxtest/testdata/ml-dsa-65-public-key.pem"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "primitive": "signature",
+          "parameterSetIdentifier": "65",
+          "executionEnvironment": "software-plain-ram",
+          "cryptoFunctions": [
+            "sign"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 3
+        },
+        "relatedCryptoMaterialProperties": {
+          "format": "PEM"
+        },
+        "oid": "2.16.840.1.101.3.4.3.18"
+      }
+    },
+    {
+      "bom-ref": "crypto/algorithm/ml-dsa-65@sha256:152b1e8d37b95495d17db9607adda42517a16dcf21cab5110c07ff2d833a2600",
+      "type": "cryptographic-asset",
+      "name": "ML-DSA-65",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/cdxtest/testdata/ml-dsa-65-private-key.pem"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "algorithm",
+        "algorithmProperties": {
+          "parameterSetIdentifier": "65",
+          "executionEnvironment": "software-plain-ram",
+          "cryptoFunctions": [
+            "sign"
+          ],
+          "classicalSecurityLevel": 192,
+          "nistQuantumSecurityLevel": 3
+        },
+        "relatedCryptoMaterialProperties": {
+          "format": "PEM"
+        },
+        "oid": "2.16.840.1.101.3.4.3.18"
+      }
+    },
+    {
+      "bom-ref": "crypto/key/ml-dsa-65@sha256:bbf687535068e46b92b1a13fddb94cf59149624484986b8435bda6e1ee1536a3",
+      "type": "cryptographic-asset",
+      "name": "ML-DSA-65",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/cdxtest/testdata/ml-dsa-65-public-key.pem"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "public-key",
+          "algorithmRef": "crypto/algorithm/ml-dsa-65@sha256:94d41a608229d2de2c811b6664d65e1bbb187f40077b6d1277da818199d970c0",
+          "value": "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",
+          "format": "PEM"
+        },
+        "oid": "2.16.840.1.101.3.4.3.18"
+      }
+    },
+    {
+      "bom-ref": "crypto/key/sha256:1ed9dd2f4082732377c2827eb6bf0dbba94371a4f66b79af7402613e92c88c70",
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/go.sum"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "bom-ref": "crypto/key/sha256:30cf7460746eb22575ef810d85a6e581f6cc71e51d9ce95e1ae5e0ec4eb84d3c",
+      "type": "cryptographic-asset",
+      "name": "generic-api-key",
+      "description": "Detected a Generic API Key, potentially exposing access to various services and sensitive operations.",
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/go.sum"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "related-crypto-material",
+        "relatedCryptoMaterialProperties": {
+          "type": "key"
+        }
+      }
+    },
+    {
+      "bom-ref": "crypto/certificate/cdxtest-ml-dsa-65@sha256:497d45f6fe1d771cf54ca7a7bdbad8194df6d916dfdec54123f6d4888cc32f61",
+      "type": "cryptographic-asset",
+      "name": "cdxtest-ml-dsa-65",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "497d45f6fe1d771cf54ca7a7bdbad8194df6d916dfdec54123f6d4888cc32f61"
+        },
+        {
+          "alg": "SHA-1",
+          "content": "bfe2eb7c5455e6b874fad1cf7a2db38c1fd2b196"
+        }
+      ],
+      "evidence": {
+        "occurrences": [
+          {
+            "location": "/home/projjwalraj707/CBOM-Lens/internal/cdxprops/cdxtest/testdata/ml-dsa-65-cert.pem"
+          }
+        ]
+      },
+      "cryptoProperties": {
+        "assetType": "certificate",
+        "certificateProperties": {
+          "subjectName": "CN=cdxtest-ml-dsa-65",
+          "issuerName": "CN=cdxtest-ml-dsa-65",
+          "notValidBefore": "2025-12-09T11:28:50Z",
+          "notValidAfter": "2026-12-09T11:28:50Z",
+          "signatureAlgorithmRef": "crypto/algorithm/ml-dsa-65@sha256:11a5c81488230096ab83b06e274f6a2ad134d717e0d5add9451ed2817422beb2",
+          "subjectPublicKeyRef": "crypto/algorithm/ml-dsa-65@sha256:94d41a608229d2de2c811b6664d65e1bbb187f40077b6d1277da818199d970c0",
+          "certificateFormat": "X.509",
+          "certificateExtension": ".pem"
+        },
+        "relatedCryptoMaterialProperties": {
+          "format": "PEM"
+        }
+      }
+    }
+  ],
+  "dependencies": [],
+  "properties": []
+}

@@ -1,0 +1,14 @@
+version: 0
+
+service:
+  mode: manual
+  verbose: false
+  log: stderr
+  # Save CBOM files in the current directory; omit to print to stdout
+  dir: .
+
+filesystem:
+  enabled: true
+  # When empty, the current directory is scanned
+  paths: []
+
